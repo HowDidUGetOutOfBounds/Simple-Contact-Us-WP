@@ -1,0 +1,42 @@
+#main .contact-form {
+    background-color: #444442;
+    padding-top: 85px;
+		display: block;
+	  padding-left: 25%;
+	  padding-right: 25%;
+}
+
+#main .contact-desc
+{
+	color: #fff;
+	margin: 10px;
+}
+
+#main .contact-desc-header
+{
+  	font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    font-size: 72px;
+    color: white;
+    text-align: center;
+}
+
+#main .contact-input {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 3rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+#main .submit-btn {
+		margin-left: 85%;
+    padding: 10px 35px;
+    border-radius: 60px;
+    background-color: #999;
+    color: white;
+    font-size: 14px;
+    border: none;
+}
