@@ -15,13 +15,16 @@ add_action( 'init', 'add_contact' );
 
 add_filter('theme_page_templates', 'pt_add_page_template_to_dropdown');
 add_filter('template_include', 'pt_change_page_template');
-add_action('wp_enqueue_scripts', 'pt_remove_style' );
+add_action('wp_print_styles', 'add_my_stylesheet');
 
-add_action('wp_head', 'load_my_styles');
-function load_my_styles(){
 
-echo '<link rel="stylesheet" href="/wp-content/plugins/SimpleContactUs/myStyles.css">';
-
+function add_my_stylesheet() {
+    $myStyleUrl = WP_PLUGIN_URL . '/SimpleContactUs/myStyles.css';
+    $myStyleFile = WP_PLUGIN_DIR . '/SimpleContactUs/myStyles.css';
+    if ( file_exists($myStyleFile) ) {
+        wp_register_style('myStyleSheets', $myStyleUrl);
+        wp_enqueue_style( 'myStyleSheets');
+    }
 }
 
 use HubSpot\Factory;
@@ -54,20 +57,6 @@ function pt_change_page_template($template)
 
     return $template;
 }
-
-function pt_remove_style()
-{
-    if (is_page('contact_form')) {
-        $theme = wp_get_theme();
-
-        $parent_style = $theme->stylesheet . '-style'; 
-
-        wp_dequeue_style($parent_style);
-        wp_deregister_style($parent_style);
-        wp_deregister_style($parent_style . '-css');
-    }
-}
-
 
 
 function add_contact(){
@@ -117,9 +106,15 @@ echo " Email was sent succesfully";
 date_default_timezone_set('Europe/Minsk');
 $log  = "User: ". $first_name . " " . $last_name . " has received an email." . PHP_EOL
  . "Time: " . date("l jS \of F Y h:i:s A") . PHP_EOL
+ . "User's email: " . $mail . PHP_EOL
 . "-------------------------".PHP_EOL;
 
-file_put_contents('./log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+if(!file_exists('./Logs'))
+{
+    mkdir('./Logs', 0777, true);
+}
+
+file_put_contents('./Logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
 }
 
 
