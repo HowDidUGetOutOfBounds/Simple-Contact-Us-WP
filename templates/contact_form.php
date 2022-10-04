@@ -5,6 +5,38 @@
 <html lang="en">
              <?php get_header();?> 
         <!--<link rel="stylesheet" href="style.css">-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            
+        jQuery(document).ready(function() {
+        $("#contactForm").submit(function(e)
+        {
+        var firstName = $("#f_name").val();
+        var lastName = $("#l_name").val();
+        var subject = $("#subject").val();
+        var message = $("#message").val();
+        var email = $("#email").val();
+     
+        var dataString = 'firstName='+ firstName + 
+        '&lastName='+ lastName + '&subject='+ 
+        subject + '&message='+ message + '&email=' + email;
+
+        // AJAX Code To Submit Form.
+        $.ajax({
+        type: "POST",
+        url: "http://wpfolder/wp-content/plugins/SimpleContactUs/ajaxsubmitform.php",
+        data: dataString,
+        cache: false,
+        success: function(result){
+        alert(result);
+        }
+        });
+        
+        return false;
+        });
+});
+            </script>
     <body>
            
         <form name="contactForm" id="contactForm" method="post" action="" class="contact-form">

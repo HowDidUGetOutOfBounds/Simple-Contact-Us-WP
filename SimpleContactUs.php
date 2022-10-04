@@ -11,7 +11,7 @@ Author: MrHowDidUGetOutOfBounds
 
 require_once get_stylesheet_directory() . ("/../../../wp-content/plugins/SimpleContactUs/bin/vendor/autoload.php"); 
 require_once get_stylesheet_directory() . ("/../../../wp-load.php");
-add_action( 'init', 'add_contact' );
+//add_action( 'init', 'add_contact' );
 
 add_filter('theme_page_templates', 'pt_add_page_template_to_dropdown');
 add_filter('template_include', 'pt_change_page_template');

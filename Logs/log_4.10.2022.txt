@@ -1,0 +1,20 @@
+User:   has received an email.
+Time: Tuesday 4th of October 2022 01:21:26 PM
+User's email: serg.karpik@gmail.com
+-------------------------
+User:   has received an email.
+Time: Tuesday 4th of October 2022 01:52:59 PM
+User's email: serg.karpik@gmail.com
+-------------------------
+User:   has received an email.
+Time: Tuesday 4th of October 2022 02:05:38 PM
+User's email: serg.karpik@gmail.com
+-------------------------
+User:   has received an email.
+Time: Tuesday 4th of October 2022 02:06:43 PM
+User's email: serg.karpik@gmail.com
+-------------------------
+User: dfb sdzbc has received an email.
+Time: Tuesday 4th of October 2022 02:28:49 PM
+User's email: serg.karpik@gmail.com
+-------------------------
